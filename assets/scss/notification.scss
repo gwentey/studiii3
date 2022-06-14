@@ -1,0 +1,74 @@
+$dimension: 12px;
+$multiplier: 1.6;
+
+.link__indicator {
+  width: $dimension;
+  height: $dimension;
+  display: block;
+  background: red;
+  position: absolute;
+  top: -($dimension / 2);
+  right: -($dimension / 2);
+  border-radius: 50%;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $dimension;
+    height: $dimension;
+    border-radius: 50%;
+    background: red;
+  }
+  
+  &--not-smooth {
+    &:after {
+      animation: pulse 900ms ease-in-out infinite;
+    }
+  }
+  
+  &--smooth {
+    &:after {
+      // will-change: transform;
+      // transform: translate3d(0, 0, 0);
+      animation: smoothpulse 900ms ease-in-out infinite;
+    }
+  }
+}
+
+
+
+@keyframes pulse {
+  0% {
+      top: 0;
+      left: 0;
+      width: $dimension;
+      height: $dimension;
+      opacity: 1;
+    }
+
+    90% {
+      top: -(($dimension * $multiplier) - $dimension)/2;
+      left: -(($dimension * $multiplier) - $dimension)/2;
+      width: $dimension * $multiplier;
+      height: $dimension * $multiplier;
+      opacity: 0.1;
+    }
+
+    100% {
+      top: 0;
+      left: 0;
+      width: $dimension;
+      height: $dimension;
+      opacity: 0;
+    }
+}
+
+@keyframes smoothpulse {
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+

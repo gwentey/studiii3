@@ -1,0 +1,332 @@
+/* .menu-item {   transition: all 0.1s ease 0s;} */
+
+.link__indicator {
+  width: 12px;
+  height: 12px;
+  display: block;
+  background: red;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  border-radius: 50%;
+}
+.link__indicator:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: red;
+}
+.link__indicator--not-smooth:after {
+  animation: pulse 900ms ease-in-out infinite;
+}
+.link__indicator--smooth:after {
+  animation: smoothpulse 900ms ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+  }
+  90% {
+    top: -3.6px;
+    left: -3.6px;
+    width: 19.2px;
+    height: 19.2px;
+    opacity: 0.1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+  }
+}
+@keyframes smoothpulse {
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}.image-moi-forover:hover span {
+  display: initial;
+}
+
+.image-moi-forover span {
+  display: none;
+  position: absolute;
+  background-color: #f8f9fa;
+  padding: 7px;
+  flex: 1 1 auto;
+  min-height: 1px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-left: -5px;
+}
+
+.dropdown.no-arrow .dropdown-toggle:after {
+  display: none;
+}
+
+.sb-sidenav-menu-heading span {
+  font-size: 13px;
+  color: #585B5E;
+  font-weight: bold;
+}
+
+.fixed-top, .sb-nav-fixed #layoutSidenav #layoutSidenav_nav, .sb-nav-fixed .sb-topnav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+ul li a {
+  padding: 3px !important;
+}
+
+a {
+  font-size: 16px !important;
+}
+
+#layoutSidenav {
+  display: flex;
+}
+
+#layoutSidenav #layoutSidenav_nav {
+  flex-basis: 225px;
+  flex-shrink: 0;
+  transition: transform 0.15s ease-in-out;
+  z-index: 1038;
+  transform: translateX(-225px);
+}
+
+#layoutSidenav #layoutSidenav_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  flex-grow: 1;
+  min-height: calc(100vh - 56px);
+  margin-left: -225px;
+}
+
+@media (min-width: 992px) {
+  #layoutSidenav #layoutSidenav_nav {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 992px) {
+  #layoutSidenav #layoutSidenav_content {
+    margin-left: 0;
+    transition: margin 0.15s ease-in-out;
+  }
+}
+
+.sb-nav-fixed .sb-topnav {
+  z-index: 1039;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
+  width: 225px;
+  height: 100vh;
+  z-index: 1038;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav {
+  padding-top: 56px;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav .sb-sidenav-menu {
+  overflow-y: auto;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_content {
+  padding-left: 225px;
+  top: 56px;
+}
+
+.nav .nav-link .sb-nav-link-icon, .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+  margin-right: 0.5rem;
+}
+
+.sb-topnav {
+  padding-left: 0;
+  height: 56px;
+  z-index: 1039;
+}
+
+.sb-topnav .navbar-brand {
+  width: 225px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0;
+}
+
+.sb-topnav.navbar-dark #sidebarToggle {
+  color: rgba(255,255,255,0.5);
+}
+
+.sb-sidenav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-wrap: nowrap;
+}
+
+.sb-sidenav .sb-sidenav-menu {
+  flex-grow: 1;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
+  padding: 1.75rem 1rem 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+  color: #b3b3b3;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
+  font-size: 0.9rem;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-sidenav-collapse-arrow {
+  display: inline-block;
+  margin-left: auto;
+  transition: transform 0.15s ease;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link.collapsed .sb-sidenav-collapse-arrow {
+  transform: rotate(-90deg);
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested {
+  margin-left: 1.5rem;
+  flex-direction: column;
+}
+
+.sb-sidenav .sb-sidenav-footer {
+  padding: 0.75rem;
+  flex-shrink: 0;
+}
+
+.sb-sidenav-dark {
+  background-color: #212529;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
+  color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+  color: #fff;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav div .nav-link.active {
+  color: #fff;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+  color: #fff;
+}
+
+.sb-sidenav-dark .sb-sidenav-footer {
+  background-color: #343a40;
+}
+
+.nav-link.active {
+}
+
+.nav-link {
+  padding-right: 30px!important;
+}
+
+.navbar-brand {
+  padding-right: 18px!important;
+}
+
+#logo-custom {
+}
+
+#logo-custom {
+}
+
+.img-menu {
+  width: 32px;
+}
+
+.nav_name {
+  margin-left: -8px;
+}
+
+padding-left: 15px;padding-top: 0px;padding-bottom: 0px; {
+}
+
+padding-left: 15px;padding-top: 0px;padding-bottom: 0px; {
+}
+
+.nav_link {
+  padding-left: 15px!important;
+  padding-top: 1px!important;
+  padding-bottom: 1px!important;
+}
+
+.hr-menu {
+  margin-left: 13px;
+}
+
+#information-perso {
+  padding-top: 12px;
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@media (max-width: 400px) {
+  #information-perso {
+    visibility: hidden;
+    width: 0px;
+  }
+}
+
